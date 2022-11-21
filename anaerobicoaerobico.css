@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Assistant&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E0ECDA;
+}
+
+.cabecalho {
+    background-color: #A2CA8E;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cabecalho-imagem {
+    height: 75px;
+}
+
+.sr-only {
+    display: none;
+}
+
+.navegacao-primaria {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacao-primaria-item {
+    font-family: 'Assistant', sans-serif;
+    color: #63203D;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.rodape {
+    background-color: #A2CA8E;
+    padding: 20px;
+}
+
+.rodape-menu-imagem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.rodape-imagem {
+    height: 40px;
+}
+
+.rodape-menu{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.rodape-menu-item {
+    font-family: 'Assistant', sans-serif;
+    color: #63203D;
+    font-weight: 400;
+}
+
+#conteudo {
+    margin: 50px;
+}
+
+#conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#conteudo-principal-comeco {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 0;
+}
+
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.conteudo-principal-imagem {
+    margin: 30px;
+    border-radius: 25px;
+    height: 500px;
+}
+
+.conteudo-principal-escrito-titulo {
+    color: #361F2D;
+    font-family: 'Angkor', cursive;
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
+}
+
+.conteudo-principal-escrito-subtitulo {
+    color: #361F2D;
+    font-family: 'Angkor', cursive;
+    text-align: left;
+    font-weight: 400;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.conteudo-principal-escrito-paragrafo {
+    color: #63203D;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.conteudo-principal-escrito-paragrafo-lista {
+    color: #63203D;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+#conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.conteudo-secundario-escrito {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.conteudo-secundario-imagem {
+    margin: 30px;
+    border-radius: 25px;
+    height: 500px;
+}
+
+.conteudo-secundario-escrito-titulo {
+    color: #361F2D;
+    font-family: 'Angkor', cursive;
+    text-align: center;
+    font-weight: 400;
+    font-size: 48px;
+    margin-top: 30px;
+}
+
+.conteudo-secundario-escrito-subtitulo {
+    color: #361F2D;
+    font-family: 'Angkor', cursive;
+    text-align: left;
+    font-weight: 400;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.conteudo-secundario-escrito-paragrafo {
+    color: #63203D;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.conteudo-secundario-escrito-paragrafo-lista {
+    color: #63203D;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 400px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navegacao-primaria {
+        position: fixed;
+        inset: 0 0 0 20%;
+        z-index: 1000;
+
+        background: hsl(0 0% 0% / 0.5);
+
+        flex-direction: column;
+        padding: min(20vh, 7rem) 2rem;
+        gap: 30px;
+
+        transform: translateX(100%);
+        transition: transform 400ms ease-out;
+    }
+
+    .navegacao-primaria[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    @supports (backdrop-filter: blur(0.3rem)) {
+        .navegacao-primaria {
+            background: hsl(0 0% 100% / 0.2);
+            backdrop-filter: blur(0.3rem);
+        }
+    } 
+
+    .mobile-nav-toggle {
+        position: absolute;
+        display: block;
+        z-index: 9999;
+        background-color: transparent;
+        background-image: url('Imagens/IconMenu.svg');
+        background-repeat: no-repeat;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("Imagens/IconMenuFechar.svg");
+    }
+
+    #conteudo {
+        margin: 0;
+        padding: 20px;
+        align-items: center;
+    }
+
+    #conteudo-principal {
+        margin: 0;
+        padding: 0;
+    }
+
+    #conteudo-secundario {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    #conteudo-principal-comeco {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .conteudo-principal-imagem {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .conteudo-principal-escrito {
+        margin: 0;
+    }
+
+    .conteudo-principal-escrito-titulo {
+        font-size: 32px;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .conteudo-secundario-escrito-titulo {
+        font-size: 32px;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .conteudo-principal-escrito-subtitulo {
+        font-size: 30px;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .conteudo-secundario-escrito-subtitulo {
+        font-size: 30px;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .conteudo-principal-escrito-paragrafo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .conteudo-secundario-escrito-paragrafo {
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+}
